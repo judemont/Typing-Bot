@@ -5,7 +5,7 @@
 
     "content_scripts": [
         {
-            "js": ["scripts/content.js"],
+            "js": ["scripts/content.ts"],
             "matches": ["<all_urls>"]
         }
     ],
