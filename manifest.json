@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Typings test Bot",
+    "version": "1.0.0",
+
+    "content_scripts": [
+        {
+            "js": ["scripts/content.js"],
+            "matches": ["<all_urls>"]
+        }
+    ],
+
+    "actions": {
+        "default_title": "Typings test Bot",
+        "default_popup": "popup/index.html"
+    }
+}

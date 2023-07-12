@@ -1,5 +1,7 @@
 {
     "scripts": {
-        "start:firefox": "web-ext run --source-dir ./extension-dist/",
+        "start": "npm run start:firefox",
+        "start:firefox": "web-ext run --source-dir ./dist/",
+        "start:chrome": "web-ext run --source-dir ./dist/ -t chromium"
     }
 }
