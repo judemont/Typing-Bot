@@ -2,6 +2,10 @@
   "manifest_version": 3,
   "name": "Typing Bot",
   "version": "1.0",
+  "action": {
+    "default_title": "Typing Bot",
+    "default_popup": "popup/index.html"
+  },
   "content_scripts": [
     {
       "js": [
