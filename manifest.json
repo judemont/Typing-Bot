@@ -1,1 +1,11 @@
-
+{
+  "manifest_version": 3,
+  "name": "Typing Bot",
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/content.js"
+      ]
+    }
+  ]
+}
