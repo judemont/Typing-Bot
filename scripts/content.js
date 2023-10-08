@@ -1,10 +1,14 @@
+const highlightedWordSelector = ".highlight"
+const inputSelector = "#inputfield"
+const typingDelay = 100
+
 function nextWord(){
-    var keydownEvent = new KeyboardEvent('keydown', {
+    const keydownEvent = new KeyboardEvent('keydown', {
         key: ' ',
         which: 32,
     });
     
-    var keyupEvent = new KeyboardEvent('keyup', {
+    const keyupEvent = new KeyboardEvent('keyup', {
         key: ' ',
         which: 32,
         keyCode: 32
@@ -15,19 +19,21 @@ function nextWord(){
 
 }
 
-var input = document.getElementById('inputfield');
+const input = document.querySelector(inputSelector);
+
+let highlightElement;
+let word;
 
 var loop = setInterval(function() {
+    highlightElement = document.querySelector(highlightedWordSelector);
     
-    nextWord()
-
-    var highlightElement = document.querySelector('.highlight');
-    
-    if (highlightElement) {
-        var word = highlightElement.innerHTML;
+    if (highlightElement != null) {
+        nextWord()
+        highlightElement = document.querySelector(highlightedWordSelector);
+        word = highlightElement.innerHTML;
         input.focus();
         input.value = word;
     }
 
-}, 100);
+}, typingDelay);
 
