@@ -1,10 +1,15 @@
 {
   "manifest_version": 3,
   "name": "Typing Bot",
+  "version": "1.0",
   "content_scripts": [
     {
+      "run_at": "document_end",
       "js": [
         "scripts/content.js"
+      ],
+      "matches": [
+        "https://10fastfingers.com/*"
       ]
     }
   ]
