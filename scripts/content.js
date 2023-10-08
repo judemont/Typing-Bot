@@ -1,6 +1,4 @@
-var input = document.getElementById('inputfield');
-
-var loop = setInterval(function() {
+function nextWord(){
     var keydownEvent = new KeyboardEvent('keydown', {
         key: ' ',
         which: 32,
@@ -11,9 +9,17 @@ var loop = setInterval(function() {
         which: 32,
         keyCode: 32
     });
-    
+
     input.dispatchEvent(keydownEvent);
     input.dispatchEvent(keyupEvent);
+
+}
+
+var input = document.getElementById('inputfield');
+
+var loop = setInterval(function() {
+    
+    nextWord()
 
     var highlightElement = document.querySelector('.highlight');
     
@@ -22,4 +28,6 @@ var loop = setInterval(function() {
         input.focus();
         input.value = word;
     }
+
 }, 100);
+
