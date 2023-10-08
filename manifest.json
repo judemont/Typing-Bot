@@ -1,7 +1,10 @@
 {
   "manifest_version": 3,
   "name": "Typing Bot",
+  "short_name": "TypingBot",
   "version": "1.0",
+  "author": "JdM",
+  "homepage_url": "https://www.rmbi.ch/jdm",
   "action": {
     "default_title": "Typing Bot",
     "default_popup": "popup/index.html"
