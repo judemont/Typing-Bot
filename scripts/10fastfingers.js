@@ -20,20 +20,22 @@ function nextWord(){
 }
 
 const input = document.querySelector(inputSelector);
-
-let highlightElement;
-let word;
-
-var loop = setInterval(function() {
-    highlightElement = document.querySelector(highlightedWordSelector);
+if (input != null) {
+    let highlightElement;
+    let word;
     
-    if (highlightElement != null) {
-        nextWord()
+    var loop = setInterval(function() {
         highlightElement = document.querySelector(highlightedWordSelector);
-        word = highlightElement.innerHTML;
-        input.focus();
-        input.value = word;
-    }
-
-}, typingDelay);
+        
+        if (highlightElement != null) {
+            nextWord()
+            highlightElement = document.querySelector(highlightedWordSelector);
+            word = highlightElement.innerHTML;
+            input.focus();
+            input.value = word;
+        }
+    
+    }, typingDelay);
+    
+}
 

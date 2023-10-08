@@ -4,9 +4,8 @@
   "version": "1.0",
   "content_scripts": [
     {
-      "run_at": "document_end",
       "js": [
-        "scripts/content.js"
+        "scripts/10fastfingers.js"
       ],
       "matches": [
         "https://10fastfingers.com/*"
