@@ -1,5 +1,5 @@
 # Typing Bot Extension
-Auto Typing Bot Extension for Various Typing Tests.
+Automatic typing browser extension for cheating on typing tests. 
 
 Supported typing website :
 - [10FastFingers](https://www.10FastFingers.com)
