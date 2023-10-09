@@ -2,9 +2,15 @@
   "manifest_version": 3,
   "name": "Typing Bot",
   "short_name": "TypingBot",
+  "description": "Automatic typing browser extension for cheating on typing tests. ",
   "version": "1.0",
   "author": "JdM",
   "homepage_url": "https://www.rmbi.ch/jdm",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "typingbot@example.com"
+    }
+  },  
   "action": {
     "default_title": "Typing Bot",
     "default_popup": "popup/index.html"
