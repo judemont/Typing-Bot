@@ -1,5 +1,17 @@
 const highlightedLetterSelector = ".letter_marked,.letter_space_marked";
-const typingDelay = 10
+
+const footContainerSelector = "#result";
+
+const delayRangeSelector = `
+<h3>Typing Delay :</h3>
+<input type="range" min="0" max="500" name="typingDelay" id="typingDelay">
+`;
+
+const typingDelayRangeSelector = "#typingDelay";
+
+var typingDelay = 100;
+
+var loop
 
 function pressKey(key){
 
@@ -31,19 +43,32 @@ function pressKey(key){
 
 }
 
+const footContainer = document.querySelector(footContainerSelector);
+footContainer.innerHTML += delayRangeSelector;
+
+document.querySelector(typingDelayRangeSelector).addEventListener("change", function (e) {
+    typingDelay = e.target.value;
+    clearInterval(loop);
+    startLoop();
+    console.log(typingDelay);
+});
+
+
+
 let letter
 let letterEl
 
-const loop = setInterval(function() {
-    letterEl = document.querySelectorAll(highlightedLetterSelector);
+function startLoop() {
+    loop = setInterval(function() {
+        letterEl = document.querySelectorAll(highlightedLetterSelector);
 
-    if (letterEl.length >= 1) {
-        letterEl = letterEl[0];
-        letter = letterEl.innerHTML;
-        console.log(letter);
-        if (letter == "_") {
-            letter = " ";
+        if (letterEl.length >= 1) {
+            letterEl = letterEl[0];
+            letter = letterEl.innerHTML;
+
+            pressKey(letter)
         }
-        pressKey(letter)
-    }
-}, typingDelay)
+    }, typingDelay)
+}
+
+startLoop()
