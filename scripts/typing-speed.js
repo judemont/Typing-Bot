@@ -1,15 +1,14 @@
 const highlightedLetterSelector = ".letter_marked,.letter_space_marked";
 
 const footContainerSelector = "#result";
-
+const defaultDelay = 25;
 const delayRangeSelector = `
 <h3>Typing Delay :</h3>
-<input type="range" min="0" max="500" name="typingDelay" id="typingDelay">
+<input type="range" value="${defaultDelay}" min="0" max="500" name="typingDelay" id="typingDelay">
 `;
 
 const typingDelayRangeSelector = "#typingDelay";
 
-var typingDelay = 100;
 
 var loop
 
@@ -46,7 +45,11 @@ function pressKey(key){
 const footContainer = document.querySelector(footContainerSelector);
 footContainer.innerHTML += delayRangeSelector;
 
-document.querySelector(typingDelayRangeSelector).addEventListener("change", function (e) {
+const typingDelayRange = document.querySelector(typingDelayRangeSelector)
+
+var typingDelay = typingDelayRange.value;
+
+typingDelayRange.addEventListener("change", function (e) {
     typingDelay = e.target.value;
     clearInterval(loop);
     startLoop();
