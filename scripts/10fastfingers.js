@@ -6,6 +6,7 @@ function nextWord(){
     const keydownEvent = new KeyboardEvent('keydown', {
         key: ' ',
         which: 32,
+        keyCode: 32
     });
     
     const keyupEvent = new KeyboardEvent('keyup', {
@@ -24,7 +25,7 @@ if (input != null) {
     let highlightElement;
     let word;
     
-    var loop = setInterval(function() {
+    const loop = setInterval(function() {
         highlightElement = document.querySelector(highlightedWordSelector);
         
         if (highlightElement != null) {

@@ -11,11 +11,21 @@
   },
   "content_scripts": [
     {
+      "run_at": "document_end",
       "js": [
         "scripts/10fastfingers.js"
       ],
       "matches": [
-        "https://10fastfingers.com/*"
+        "*://*.10fastfingers.com/*"
+      ]
+    },
+    {
+      "run_at": "document_end",
+      "js": [
+        "scripts/typing-speed.js"
+      ],
+      "matches": [
+        "*://*.typing-speed.net/*"
       ]
     }
   ]
