@@ -1,9 +1,15 @@
 const highlightedLetterSelector = ".letter_marked,.letter_space_marked";
-const typingDelay = 1
+const typingDelay = 10
 
 function pressKey(key){
-    console.log(key)
 
+
+    const keydownEvent = new KeyboardEvent('keydown', {
+        key: key,
+        which: key.charCodeAt(0),
+        keyCode: key.charCodeAt(0),
+        charCode: key.charCodeAt(0),
+    });
 
     const keypressEvent = new KeyboardEvent('keypress', {
         key: key,
@@ -11,8 +17,17 @@ function pressKey(key){
         keyCode: key.charCodeAt(0),
         charCode: key.charCodeAt(0),
     });
+    
+    const keyupEvent = new KeyboardEvent('keyup', {
+        key: key,
+        which: key.charCodeAt(0),
+        keyCode: key.charCodeAt(0),
+        charCode: key.charCodeAt(0),
+    });
 
+    document.dispatchEvent(keydownEvent);
     document.dispatchEvent(keypressEvent);
+    document.dispatchEvent(keyupEvent);
 
 }
 
